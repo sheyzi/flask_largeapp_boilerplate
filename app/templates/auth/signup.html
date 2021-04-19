@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block title %}
+    Sign Up
+{% endblock title %}
+{% block content %}
+    <h1>Welcome to Flask BoilerPlate</h1>
+    <h4>Become a member!</h4>
+{% from 'bootstrap/form.html' import render_field, render_hidden_errors %}
+
+<form method="post" class="mt-4">
+    {{ form.csrf_token() }}
+    {{ render_hidden_errors(form) }}
+    {{ render_field(form.firstname) }}
+    {{ render_field(form.lastname) }}
+    {{ render_field(form.phone) }}
+    {{ render_field(form.username) }}
+    {{ render_field(form.email) }}
+    {{ render_field(form.password) }}
+    {{ render_field(form.confirm_password) }}
+    {{ render_field(form.submit) }}
+</form>
+{% endblock content %}
