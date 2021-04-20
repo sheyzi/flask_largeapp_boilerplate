@@ -15,17 +15,21 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Sign Up')
 
     def validate_username(self, username):
-        user = User.query.filter_by(user_name=username.data)
+        user = User.query.filter_by(user_name=username.data).first()
+        print(user)
         if user:
             raise ValidationError("A user with this username already exists! Please choose another username")
 
     def validate_email(self, email):
-        user = User.query.filter_by(email=email.data)
+        user = User.query.filter_by(email=email.data).first()
+        print(user)
         if user:
+            print(User.query.all())
             raise ValidationError("An account with this email already exists!")
 
     def validate_phone(self, phone):
-        user = User.query.filter_by(phone_number=phone)
+        user = User.query.filter_by(phone_number=phone.data).first()
+        print(user)
         if user:
             raise ValidationError("An account with this phone number already exists!")
 
