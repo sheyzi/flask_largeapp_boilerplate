@@ -16,6 +16,11 @@ class AuthUserView(ModelView):
     can_delete = False
     can_export = True
     column_exclude_list = ['password', ]
+    can_view_details = True
+    column_details_exclude_list = ['password']
+    column_export_exclude_list = ['password']
+    column_sortable_list = ['first_name', 'phone_number']
+    export_types = ['csv']
     edit_modal = True
     create_modal = True
     column_filters = ['active', 'is_admin']
