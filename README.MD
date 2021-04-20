@@ -12,9 +12,6 @@ This project should be of great assistance for almost any application you're pla
 
 ## Todo
 * Change the navbar title in flask_largeapp_boilerplate/app/templates/base.html
-* Add an if statement to the navbar so once the user is logged in they wouldn't see the "Sign up" and "Login" options but a logout menu instead.
-You can access the user logged in version by passing the `current_user` object to the template and checking if the user is logged in
-  by using `current_user.is_authenticated`. **Note: it returns a boolean value. `True` when logged in and `False` otherwise**
 
   
 ## Admin Panel
